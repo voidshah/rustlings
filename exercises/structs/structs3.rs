@@ -2,9 +2,9 @@
 // Structs contain data, but can also have logic. In this exercise we have
 // defined the Package struct and we want to test some logic attached to it.
 // Make the code compile and the tests pass!
-// If you have issues execute `rustlings hint structs3`
+// Execute `rustlings hint structs3` or use the `hint` watch subcommand for a hint.
 
-
+// I AM NOT DONE
 
 #[derive(Debug)]
 struct Package {
@@ -16,8 +16,7 @@ struct Package {
 impl Package {
     fn new(sender_country: String, recipient_country: String, weight_in_grams: i32) -> Package {
         if weight_in_grams <= 0 {
-            // panic statement goes here...
-            panic!("Not valid");
+            panic!("Can not ship a weightless package.")
         } else {
             Package {
                 sender_country,
@@ -27,13 +26,12 @@ impl Package {
         }
     }
 
-    fn is_international(&self) -> bool {
-        self.recipient_country != self.sender_country
+    fn is_international(&self) -> ??? {
+        // Something goes here...
     }
 
-    fn get_fees(&self, cents_per_gram: i32) -> i32 {
+    fn get_fees(&self, cents_per_gram: i32) -> ??? {
         // Something goes here...
-        self.weight_in_grams * cents_per_gram
     }
 }
 
